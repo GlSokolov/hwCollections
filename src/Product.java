@@ -5,11 +5,14 @@ public class Product {
     private int price;
     private String name;
     private int amount;
+    private final int id;
+    private static int counter = 1;
 
     public Product(int price, String name, int amount) {
         setName(name);
         setPrice(price);
         setAmount(amount);
+        this.id = counter++;
 
     }
 
@@ -58,17 +61,16 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return price == product.price && amount == product.amount && Objects.equals(name, product.name);
+        return Objects.equals(name, product.name);
     }
-
     @Override
     public int hashCode() {
-        return Objects.hash(price, name, amount);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
-        return  name +
+        return   id+"."+name +
                 " цена за "+amount+"гр. = "+ price +
                 "руб.";
     }
