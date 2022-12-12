@@ -8,7 +8,7 @@ public class Main {
         System.out.println("================================================================================");
     }
     public static void main(String[] args) {
-        Product[] products = new Product[11];
+        Product[] products = new Product[10];
         products[0] = new Product(200, "Банан", 1000);
         products[1] = new Product(13, "Арбуз", 1000);
         products[2] = new Product(15, "Дыня", 1000);
@@ -20,7 +20,6 @@ public class Main {
         products[8] = new Product(80, "Голубика", 100);
         products[9] = new Product(40, "Орехи", 100);
 
-        // Можно ли было по-другому сделать проверку на совпадения?
         for (int i = 0; i < products.length; i++) {
             for (int j = i+1; j < products.length; j++) {
                 if (products[i].equals(products[j])) {
@@ -40,6 +39,8 @@ public class Main {
         productsList.add(products[7]);
         productsList.add(products[8]);
         productsList.add(products[9]);
+        productsList.remove(products[9]);
+
 
         System.out.printf(Arrays.toString(productsList.toArray()));
 
