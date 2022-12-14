@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void space () {
@@ -73,5 +70,22 @@ public class Main {
 
         Recipe cakeRecipe = new Recipe("Банановый кекс с орехами", productForCake, 240);
         System.out.println(cakeRecipe);
+
+        Random random = new Random();
+        Set<Integer> numbers = new HashSet<>();
+        while (numbers.size()<20){
+            numbers.add(random.nextInt(1000));
+        }
+
+        Iterator<Integer> a = numbers.iterator();
+        while(a.hasNext()){
+            Integer number = a.next();
+            if (number%2 == 1) {
+                a.remove();
+            }
+        }
+        System.out.println(numbers);
+
+
     }
 }
